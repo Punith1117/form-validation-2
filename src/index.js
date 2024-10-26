@@ -70,8 +70,8 @@ zipCode.addEventListener('input', () => {
     let zipCodeNumOfDigits = /^\d{6}$/;
     console.log(zipCodeCheck.value)
     console.log(zipCodeType.test(zipCodeCheck.value));
-    console.log(typeof(zipCodeCheck.value))
-    if (zipCodeCheck == '') {
+    console.log(typeof(zipCodeCheck.value));
+    if (zipCodeCheck.value == '') {
         zipCodeCheck.className = 'invalid';
         zipCodeError.textContent = 'Zip code required';
         zipCodeError.className = 'error display-error';
