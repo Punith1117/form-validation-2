@@ -5,5 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web-Dev Template</title>
   </head>
-  <body></body>
+  <body>
+    <div class="main-container">
+      <form novalidate>
+        <section class="form-heading">Enter your details:</section>
+        <section class="user-inputs">
+          <div class="input-container">
+            <label for="mail">Email: </label>
+            <input type="email" name="mail" id="mail" required pattern="^[0-9a-zA-Z_]+@gmail.com$">
+            <span class="error"></span>
+          </div>
+          <div class="input-container">
+            <label for="country">Country: </label>
+            <input type="text" name="country" id="country" required pattern="^[a-zA-Z]+$">
+            <span class="error"></span>
+          </div>
+          <div class="input-container">
+            <label for="zip-code">Zip code: </label>
+            <input type="number" name="zip-code" id="zip-code" required>
+            <span class="error"></span>
+          </div>
+          <div class="input-container">
+            <label for="pass">Password: </label>
+            <input type="password" name="pass" id="pass">
+            <span class="error"></span>
+          </div>
+          <div class="input-container">
+            <label for="confirm-pass">Confirm password: </label>
+            <input type="password" name="confirm-pass" id="confirm-pass">
+            <span class="error"></span>
+          </div>
+        </section>
+        <section class="submit">
+          <button type="submit">Submit</button>
+        </section>
+      </form>
+    </div>
+  </body>
 </html>

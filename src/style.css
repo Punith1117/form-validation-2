@@ -1,0 +1,83 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    border: 5px double rgb(21, 42, 134);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.form-heading {
+    font-size: max(3vw, 2rem);
+    background-color: rgba(153, 255, 0, 0.726);
+    padding: 1rem;
+}
+
+.user-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.input-container {
+    position: relative;
+}
+
+input {
+    border: 2px solid;
+    border-radius: 2rem;
+    padding: 5px;
+    border: 3px solid black;
+    outline: 0;
+    height: 2.5rem;
+    font-size: 1.3rem;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+label + #mail {
+    width: 15rem;
+}
+
+label + #mail + .error {
+    width: 25rem;
+}
+
+label + #zip-code {
+    width: 7rem;
+}
+
+label + #country {
+    width: 14rem;
+}
+
+.invalid {
+    border-color: red;
+}
+
+.valid {
+    border-color: green;
+}
+
+.error {
+    display: none;
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    width: 20rem;
+    color: red;
+}
+
+.display-error {
+    display: inline;
+}
