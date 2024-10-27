@@ -93,3 +93,7 @@ label + #country {
     display: flex;
     flex-direction: column;
 }
+
+input::placeholder {
+    color: red;
+}

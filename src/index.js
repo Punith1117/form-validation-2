@@ -12,7 +12,7 @@ let confirmPassword = form.querySelector('#confirm-pass');
 
 email.addEventListener('input', () => {
     let emailCheck = form.querySelector('#mail');
-
+    emailCheck.placeholder = '';
     if (emailCheck.checkValidity()) {
         emailCheck.className = 'valid';
         removeErrorMessage('mail');
@@ -24,6 +24,7 @@ email.addEventListener('input', () => {
 
 country.addEventListener('input', () => {
     let countryCheck = document.querySelector("#country");
+    countryCheck.placeholder = '';
     if (countryCheck.checkValidity()) {
         countryCheck.className = 'valid';
         removeErrorMessage('country');
@@ -36,7 +37,7 @@ country.addEventListener('input', () => {
 zipCode.addEventListener('input', () => {
     let zipCodeCheck = document.querySelector("#zip-code");
     let zipCodeError = document.querySelector('#zip-code + .error');
-
+    zipCodeCheck.placeholder = '';
     let zipCodeType = /^[0-9]+$/;
     let zipCodeNumOfDigits = /^\d{6}$/;
     console.log(zipCodeCheck.value)
@@ -63,6 +64,7 @@ zipCode.addEventListener('input', () => {
 
 password.addEventListener('input', () => {
     let passwordCheck = document.querySelector('#pass');
+    passwordCheck.placeholder = '';
     let passwordNumOfChars = /^.{4,}$/;
     let error = document.querySelector('#pass + .error');
     if (passwordCheck.validity.valueMissing) {
@@ -98,6 +100,7 @@ password.addEventListener('input', () => {
 
 confirmPassword.addEventListener('input', () => {
     let confirmPass = document.querySelector('#confirm-pass');
+    confirmPass.placeholder = '';
     let confirmPassError = document.querySelector('#confirm-pass + .error')
     if (comparePassAndConfirmPass()) {
         confirmPass.className = 'valid';
@@ -112,11 +115,22 @@ confirmPassword.addEventListener('input', () => {
 
 submitButton.addEventListener('click', (e) => {
     e.preventDefault();
-    let mail = document.querySelector('#mail');
-    if(mail.checkValidity()) {
-        alert('form submitted');
+    let errors = 0;
+    let empty = 0;
+    let inputs = document.querySelectorAll('input');
+    inputs.forEach((input) => {
+        if (input.classList.contains('invalid')) {
+            errors++;
+        } else if (input.className == '') {
+            input.placeholder = 'required';
+            empty++;
+        }
+    })
+
+    if ((errors == 0) && (empty == 0)) {
+        alert('Form successfully submitted');
     } else {
-        alert('form not submitted');
+        alert('Please submit correct details');
     }
 })
 
