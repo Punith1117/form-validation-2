@@ -8,6 +8,7 @@ let email = form.querySelector('#mail');
 let country = form.querySelector("#country");
 let zipCode = form.querySelector('#zip-code');
 let password = form.querySelector('#pass');
+let confirmPassword = form.querySelector('#confirm-pass');
 
 email.addEventListener('input', () => {
     let emailCheck = form.querySelector('#mail');
@@ -81,6 +82,32 @@ password.addEventListener('input', () => {
         error.className = 'error';
         passwordCheck.className = 'valid';
     }
+
+    let confirmPass = document.querySelector('#confirm-pass');
+    let confirmPassError = document.querySelector('#confirm-pass + .error')
+    if (comparePassAndConfirmPass()) {
+        confirmPass.className = 'valid';
+        confirmPassError.textContent = '';
+        confirmPassError.className = 'error';
+    } else {
+        confirmPass.className = 'invalid';
+        confirmPassError.textContent = 'Passwords do not match';
+        confirmPassError.className = 'error display-error';
+    }
+})
+
+confirmPassword.addEventListener('input', () => {
+    let confirmPass = document.querySelector('#confirm-pass');
+    let confirmPassError = document.querySelector('#confirm-pass + .error')
+    if (comparePassAndConfirmPass()) {
+        confirmPass.className = 'valid';
+        confirmPassError.textContent = '';
+        confirmPassError.className = 'error';
+    } else {
+        confirmPass.className = 'invalid';
+        confirmPassError.textContent = 'Passwords do not match';
+        confirmPassError.className = 'error display-error';
+    }
 })
 
 submitButton.addEventListener('click', (e) => {
@@ -127,4 +154,12 @@ function removeErrorMessage(element) {
             countryError.textContent = '';
             countryError.className = 'error';
     }
+}
+
+function comparePassAndConfirmPass() {
+    let pass = document.querySelector('#pass');
+    let confirmPass = document.querySelector('#confirm-pass');
+    if (pass.value == confirmPass.value) {
+        return true;
+    } else return false;
 }
