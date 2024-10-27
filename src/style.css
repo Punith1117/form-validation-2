@@ -21,6 +21,9 @@ form {
     padding: 1rem;
 }
 
+label {
+    font-size: 2rem;
+}
 .user-inputs {
     display: flex;
     flex-direction: column;
@@ -80,4 +83,9 @@ label + #country {
 
 .display-error {
     display: inline;
+}
+
+.input-container:has(#pass), .input-container:has(#confirm-pass) {
+    display: flex;
+    flex-direction: column;
 }
