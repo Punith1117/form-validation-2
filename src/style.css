@@ -142,3 +142,14 @@ input::placeholder {
     gap: 1rem;
     align-items: center;
 }
+
+button[type="submit"] {
+    font-size: 1.5rem;
+    background-color: greenyellow;
+    border-radius: 1rem;
+    border: none;
+    &:hover {
+        background-color: green;
+        color: white;
+    }
+}
