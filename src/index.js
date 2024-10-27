@@ -9,6 +9,7 @@ let country = form.querySelector("#country");
 let zipCode = form.querySelector('#zip-code');
 let password = form.querySelector('#pass');
 let confirmPassword = form.querySelector('#confirm-pass');
+let showHidePassword = form.querySelector('.show-hide');
 
 email.addEventListener('input', () => {
     let emailCheck = form.querySelector('#mail');
@@ -113,6 +114,19 @@ confirmPassword.addEventListener('input', () => {
     }
 })
 
+showHidePassword.addEventListener('click', (e) => {
+    e.preventDefault();
+    let pass = document.querySelector('#pass');
+    if (showHidePassword.classList.contains('hide')) {
+        showHidePassword.classList.remove('hide');
+        showHidePassword.classList.add('show');
+        pass.type = 'text';
+    } else {
+        showHidePassword.classList.remove('show');
+        showHidePassword.classList.add('hide');
+        pass.type = 'password';
+    }
+})
 submitButton.addEventListener('click', (e) => {
     e.preventDefault();
     let errors = 0;

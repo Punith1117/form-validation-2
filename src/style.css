@@ -24,6 +24,7 @@ form {
 label {
     font-size: 2rem;
 }
+
 .user-inputs {
     display: flex;
     flex-direction: column;
@@ -32,6 +33,9 @@ label {
 
 .input-container {
     position: relative;
+}
+button:hover {
+    cursor: pointer;
 }
 
 input {
@@ -46,6 +50,10 @@ input {
 
 label:hover {
     cursor: pointer;
+}
+
+label[for="pass"] {
+    width: 40%;
 }
 
 label + #mail {
@@ -96,4 +104,28 @@ label + #country {
 
 input::placeholder {
     color: red;
+}
+
+.show-hide {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 0.7rem;
+    background-color: beige;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+.hide {
+    background-image: url(./svg/eye-off-svgrepo-com.svg);
+}
+
+.show {
+    background-image: url(./svg/eye-show-svgrepo-com.svg);
+}
+
+.label-show-hide {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
