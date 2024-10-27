@@ -1,156 +1,157 @@
 .main-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 form {
-    border: 5px double rgb(21, 42, 134);
-    border-radius: 1rem;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
+  border: 5px double rgb(21, 42, 134);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
 }
 
 .form-heading {
-    font-size: max(3vw, 2rem);
-    background-color: rgba(255, 238, 0, 0.726);
-    padding: 1rem;
-    border-radius: 1rem;
+  font-size: max(3vw, 2rem);
+  background-color: rgba(255, 238, 0, 0.726);
+  padding: 1rem;
+  border-radius: 1rem;
 }
 
 label {
-    font-size: 2rem;
-    padding: 5px;
-    border-radius: 1rem;
+  font-size: 2rem;
+  padding: 5px;
+  border-radius: 1rem;
 }
 
 .user-inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .input-container {
-    position: relative;
+  position: relative;
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 input {
-    border: 2px solid;
-    border-radius: 2rem;
-    padding: 5px;
-    border: 3px solid black;
-    outline: 0;
-    height: 2.5rem;
-    font-size: 1.3rem;
-    &:focus {
-        background-color: rgb(58, 79, 124);
-        color: white;
-    }
+  border: 2px solid;
+  border-radius: 2rem;
+  padding: 5px;
+  border: 3px solid black;
+  outline: 0;
+  height: 2.5rem;
+  font-size: 1.3rem;
+  &:focus {
+    background-color: rgb(58, 79, 124);
+    color: white;
+  }
 }
 
 label:hover {
-    cursor: pointer;
-    background-color: rgb(237, 255, 137);
+  cursor: pointer;
+  background-color: rgb(237, 255, 137);
 }
 
 label[for="pass"] {
-    width: 40%;
-    min-width: 8.5rem;
+  width: 40%;
+  min-width: 8.5rem;
 }
 
 label[for="confirm-pass"] {
-    width: 17rem;
+  width: 17rem;
 }
 
 label + #mail {
-    width: 15rem;
+  width: 15rem;
 }
 
 label + #mail + .error {
-    width: 22rem;
+  width: 22rem;
 }
 
 label + #country + .error {
-    width: 20rem;
+  width: 20rem;
 }
 
 label + #zip-code {
-    width: 7rem;
+  width: 7rem;
 }
 
 label + #country {
-    width: 14rem;
+  width: 14rem;
 }
 
 .invalid {
-    border-color: red;
+  border-color: red;
 }
 
 .valid {
-    border-color: green;
+  border-color: green;
 }
 
 .error {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 20rem;
-    color: red;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 20rem;
+  color: red;
 }
 
 .display-error {
-    display: inline;
+  display: inline;
 }
 
-.input-container:has(#pass), .input-container:has(#confirm-pass) {
-    display: flex;
-    flex-direction: column;
+.input-container:has(#pass),
+.input-container:has(#confirm-pass) {
+  display: flex;
+  flex-direction: column;
 }
 
 input::placeholder {
-    color: red;
+  color: red;
 }
 
 .show-hide {
-    height: 2rem;
-    width: 2rem;
-    border-radius: 0.7rem;
-    background-color: beige;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 0.7rem;
+  background-color: beige;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
 }
 
 .hide {
-    background-image: url(./svg/eye-off-svgrepo-com.svg);
+  background-image: url(./svg/eye-off-svgrepo-com.svg);
 }
 
 .show {
-    background-image: url(./svg/eye-show-svgrepo-com.svg);
+  background-image: url(./svg/eye-show-svgrepo-com.svg);
 }
 
 .label-show-hide {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 button[type="submit"] {
-    font-size: 1.5rem;
-    background-color: greenyellow;
-    border-radius: 1rem;
-    border: none;
-    &:hover {
-        background-color: green;
-        color: white;
-    }
+  font-size: 1.5rem;
+  background-color: greenyellow;
+  border-radius: 1rem;
+  border: none;
+  &:hover {
+    background-color: green;
+    color: white;
+  }
 }
