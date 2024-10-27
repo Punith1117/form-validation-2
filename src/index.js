@@ -7,6 +7,8 @@ let form = document.querySelector('form');
 let email = form.querySelector('#mail');
 let country = form.querySelector("#country");
 let zipCode = form.querySelector('#zip-code');
+let password = form.querySelector('#pass');
+
 email.addEventListener('input', () => {
     let emailCheck = form.querySelector('#mail');
 
@@ -27,6 +29,34 @@ country.addEventListener('input', () => {
     } else {
         countryCheck.className = 'invalid';
         displayCountryError();
+    }
+})
+
+zipCode.addEventListener('input', () => {
+    let zipCodeCheck = document.querySelector("#zip-code");
+    let zipCodeError = document.querySelector('#zip-code + .error');
+
+    let zipCodeType = /^[0-9]+$/;
+    let zipCodeNumOfDigits = /^\d{6}$/;
+    console.log(zipCodeCheck.value)
+    console.log(zipCodeType.test(zipCodeCheck.value));
+    console.log(typeof(zipCodeCheck.value));
+    if (zipCodeCheck.value == '') {
+        zipCodeCheck.className = 'invalid';
+        zipCodeError.textContent = 'Zip code required';
+        zipCodeError.className = 'error display-error';
+    } else if (!zipCodeType.test(zipCodeCheck.value)) {
+        zipCodeCheck.className = 'invalid';
+        zipCodeError.textContent = 'Zip code can contain only numeric digits';
+        zipCodeError.className = 'error display-error';   
+    } else if (!zipCodeNumOfDigits.test(zipCodeCheck.value)) {
+        zipCodeCheck.className = 'invalid';
+        zipCodeError.textContent = 'Zip code must be of 6 digits';
+        zipCodeError.className = 'error display-error';
+    } else {
+        zipCodeCheck.className = 'valid';
+        zipCodeError.textContent = '';
+        zipCodeError.className = 'error';
     }
 })
 
@@ -61,34 +91,6 @@ function displayCountryError() {
     }
     errorMessage.className = 'error display-error';
 }
-
-zipCode.addEventListener('input', () => {
-    let zipCodeCheck = document.querySelector("#zip-code");
-    let zipCodeError = document.querySelector('#zip-code + .error');
-
-    let zipCodeType = /^[0-9]+$/;
-    let zipCodeNumOfDigits = /^\d{6}$/;
-    console.log(zipCodeCheck.value)
-    console.log(zipCodeType.test(zipCodeCheck.value));
-    console.log(typeof(zipCodeCheck.value));
-    if (zipCodeCheck.value == '') {
-        zipCodeCheck.className = 'invalid';
-        zipCodeError.textContent = 'Zip code required';
-        zipCodeError.className = 'error display-error';
-    } else if (!zipCodeType.test(zipCodeCheck.value)) {
-        zipCodeCheck.className = 'invalid';
-        zipCodeError.textContent = 'Zip code can contain only numeric digits';
-        zipCodeError.className = 'error display-error';   
-    } else if (!zipCodeNumOfDigits.test(zipCodeCheck.value)) {
-        zipCodeCheck.className = 'invalid';
-        zipCodeError.textContent = 'Zip code must be of 6 digits';
-        zipCodeError.className = 'error display-error';
-    } else {
-        zipCodeCheck.className = 'valid';
-        zipCodeError.textContent = '';
-        zipCodeError.className = 'error';
-    }
-})
 
 function removeErrorMessage(element) {
     switch(element) {
