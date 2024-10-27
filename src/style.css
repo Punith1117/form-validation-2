@@ -23,6 +23,8 @@ form {
 
 label {
     font-size: 2rem;
+    padding: 5px;
+    border-radius: 1rem;
 }
 
 .user-inputs {
@@ -50,10 +52,16 @@ input {
 
 label:hover {
     cursor: pointer;
+    background-color: rgb(237, 255, 137);
 }
 
 label[for="pass"] {
     width: 40%;
+    min-width: 8.5rem;
+}
+
+label[for="confirm-pass"] {
+    width: 17rem;
 }
 
 label + #mail {
