@@ -17,8 +17,9 @@ form {
 
 .form-heading {
     font-size: max(3vw, 2rem);
-    background-color: rgba(153, 255, 0, 0.726);
+    background-color: rgba(255, 238, 0, 0.726);
     padding: 1rem;
+    border-radius: 1rem;
 }
 
 label {
