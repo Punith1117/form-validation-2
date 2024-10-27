@@ -60,6 +60,29 @@ zipCode.addEventListener('input', () => {
     }
 })
 
+password.addEventListener('input', () => {
+    let passwordCheck = document.querySelector('#pass');
+    let passwordNumOfChars = /^.{4,}$/;
+    let error = document.querySelector('#pass + .error');
+    if (passwordCheck.validity.valueMissing) {
+        error.textContent = 'password required';
+        error.className = 'error display-error';
+        passwordCheck.className = 'invalid';
+    } else if (passwordCheck.validity.patternMismatch) {
+        error.textContent = 'password can contain only letters and numbers';
+        error.className = 'error display-error';
+        passwordCheck.className = 'invalid';
+    } else if (!passwordNumOfChars.test(passwordCheck.value)) {
+        error.textContent = 'password must contain at least 4 characters'
+        error.className = 'error display-error';
+        passwordCheck.className = 'invalid';
+    } else {
+        error.textContent = '';
+        error.className = 'error';
+        passwordCheck.className = 'valid';
+    }
+})
+
 submitButton.addEventListener('click', (e) => {
     e.preventDefault();
     let mail = document.querySelector('#mail');
