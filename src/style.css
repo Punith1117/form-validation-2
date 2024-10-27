@@ -53,7 +53,11 @@ label + #mail {
 }
 
 label + #mail + .error {
-    width: 25rem;
+    width: 22rem;
+}
+
+label + #country + .error {
+    width: 20rem;
 }
 
 label + #zip-code {
@@ -75,7 +79,7 @@ label + #country {
 .error {
     display: none;
     position: absolute;
-    top: 2.5rem;
+    top: 100%;
     left: 0;
     width: 20rem;
     color: red;
