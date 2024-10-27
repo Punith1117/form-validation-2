@@ -36,6 +36,7 @@ label {
 .input-container {
     position: relative;
 }
+
 button:hover {
     cursor: pointer;
 }
@@ -48,6 +49,10 @@ input {
     outline: 0;
     height: 2.5rem;
     font-size: 1.3rem;
+    &:focus {
+        background-color: rgb(58, 79, 124);
+        color: white;
+    }
 }
 
 label:hover {
